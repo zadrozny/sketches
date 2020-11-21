@@ -1,0 +1,87 @@
+/*
+h1 - 48px
+h2 - 36px
+h3 - 28px
+all other text - 21px
+
+colors: 
+   #588C94 
+   #1D3C41
+*/
+
+/* Global styles  */
+
+body {
+    margin: 0;
+    /* this font size will effect all elements (other than h1 -> h6) on the page */
+    font-size: 21px;
+}
+
+/* ========
+Layout 
+======== */
+
+header {
+ /*   background-color: #588C94;
+    color: white;*/
+    padding: 25% 0;
+    text-align: center;
+}
+
+
+.columns {
+    display: flex;
+}
+
+.column {
+    margin: 0 10px;
+}
+
+
+
+.scared {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.excited {
+    animation-duration: 2s;
+    /*animation-iteration-count: 1;*/
+    animation-name: jump;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes jump {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-100px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
