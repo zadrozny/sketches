@@ -28,6 +28,9 @@ header {
     text-align: center;
 }
 
+button {
+  margin: 10px;
+}
 
 .columns {
     display: flex;
@@ -36,7 +39,6 @@ header {
 .column {
     margin: 0 10px;
 }
-
 
 
 .scared {
@@ -75,6 +77,8 @@ header {
     animation-name: jump;
     animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
 }
+
+
 
 @keyframes jump {
     0%   { transform: scale(1,1)      translateY(0); }
