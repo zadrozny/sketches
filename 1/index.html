@@ -7,9 +7,13 @@
 			body {
 				background-color: black;
 			}
+			h1 {
+				color: white;
+			}
 		</style>
 	</head>
 	<body id="bod">
+		<h1 id="words">In the beginning...</h1>
 		<script>
 			Object.keys(window).forEach(key => {
 			    if (/^on/.test(key)) {
@@ -18,8 +22,10 @@
 			            	// console.log(event.type);
 			            	if (document.body.style.backgroundColor === 'black'){
 			            		document.body.style.backgroundColor = 'white'
+			            		document.getElementById("words").style.color="black"
 			            	} else {
 			            		document.body.style.backgroundColor = 'black'
+			            		document.getElementById("words").style.color="white"
 			            	}
 			            }
 			        });
