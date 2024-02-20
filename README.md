@@ -1,4 +1,4 @@
 # SKETCHES
 
-## Experiments. Flights of fancy. Scaffolding for other projects. 
+## Experiments. Ideas. Art. Tests. Scaffolding.
 
