@@ -1,0 +1,59 @@
+<!-- https://stackoverflow.com/questions/78035180/can-i-make-list-items-tabable-without-assigning-tabindex-to-each-one?noredirect=1#comment137571239_78035180 -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Edit text</title>
+        <style>
+            h1 {
+                font-size: 4rem;
+            }
+
+            h2 {
+                font-size: 3rem;
+            }
+
+            div {
+                font-size: 1.5rem;
+                padding: 2rem;
+            }
+
+            code {
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>An illustration of <code>tabindex</code></h1>
+        <h2>Press tab to begin</h2>
+        
+        <div tabindex='1'>
+            First press: Focus starts here because  <code>div</code> has <code>tabindex='1'</code>
+        </div>
+
+        <div tabindex='1'>
+            Second press: Focus goes here because  <code>div</code> has <code>tabindex='1'</code> and DOM order is followed.
+        </div>
+
+        <div tabindex='0'>
+            Last press: Focus goes here because  <code>div</code> has <code>tabindex='0'</code> and 
+            <code>tabindex="0"</code> "means that the element should be focusable in sequential keyboard navigation, after any positive tabindex values. The focus navigation order of these elements is defined by their order in the document source." <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">(MDN)</a>
+        </div>
+
+
+        <div class='listItem'>
+            Third press: Focus goes here because  <code>div</code> has <code>tabindex='2'</code>, which was added by script.
+        </div>
+
+        <div class='listItem'>
+            Fourth press: Focus goes here because  <code>div</code> has <code>tabindex='3'</code>, which was added by script.
+        </div>
+
+        <script>
+
+            let offset = 2;
+            document.querySelectorAll(".listItem").forEach((el, i) => el.tabIndex = i + offset)
+        
+        </script>
+    </body>
+</html>
